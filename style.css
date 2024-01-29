@@ -1,0 +1,128 @@
+body
+{
+height: 100vh;
+margin: 0;
+padding: 0;
+font-family: "roboto", arial, sans-serrif; 
+}
+
+
+
+.card {
+
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  min-height: 100px;
+  min-width: 80px;
+}
+
+
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+}
+
+
+.display-container{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 10px;
+  gap: 10px;
+  width: 100%;
+
+
+ 
+}
+
+
+.footer {
+  height: 50px;
+
+}
+
+.form-container {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.form-header {
+  padding-bottom: 5px;
+}
+.form-header, .submit {
+  display: grid;
+  grid-column: 1 / -1;
+  font-weight: 700;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.input-form {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+  margin: 15px;
+  gap: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  
+}
+
+.submit {
+  margin-top: 10px;
+  justify-self: center; /* Center the button horizontally */
+}
+
+.main {
+  display: grid;
+  flex: 1;
+  grid-template-rows: 2fr 5fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+
+.pages {
+  font-style: italic;
+}
+
+.read {
+  color: green;
+}
+
+.submit {
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.unread {
+  color: red;
+}
+
+.read-status, .unread, .read {
+  border: none;
+  background: none;
+}
+
+
+
+
