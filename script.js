@@ -10,13 +10,26 @@ submit.addEventListener ('click', addBookToLibrary);
 
 const myLibrary = [];
 
-function Book(title, author, pages, read, catalogNumber) {
+class Book {
+
+    constructor(title, author, pages, read, catalogNumber) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.number = catalogNumber;
-    
+
+    }
+}
+
+
+
+
+class PriorityBook extends Book {
+    constructor(title, author, pages, read, catalogNumber, priority) {
+        super(title, author, pages, read, catalogNumber, location);
+        this.priority = priority;
+    }
 }
 
 
@@ -28,23 +41,40 @@ function addBookToLibrary() {
     let authorInput = document.getElementById("author-input");
     let pagesInput = document.getElementById("pages-input");
     let readInput = document.getElementById("read-input");
+    let priorityInput = document.getElementById("priority-input"); 
 
    console.log("submit clicked");
 
-    title = titleInput.value;
-    author = authorInput.value;
-    pages = pagesInput.value;
-    read = readInput.checked;
-    catalogNumber = i;
+    let title = titleInput.value;
+    let author = authorInput.value;
+    let pages = pagesInput.value;
+    let read = readInput.checked;
+    let catalogNumber = i;
+    let priority = priorityInput;
+    let book;
+
+    if (priorityInput) {
+        console.log(`PREPARING FOR ${title} by ${author} with ${pages} (catalog number: ${catalogNumber}) added to library `)
+        book = new PriorityBook(title, author, pages, read, catalogNumber, priority);
+        myLibrary.push(book);
+        createCard(book);
+        console.log(`SUCCESS! ${title}by ${author} with ${pages} added to library `)
+        console.log(myLibrary);
+        i++;
+        
+    } else {
+
+        
 
 
     console.log(`PREPARING FOR ${title} by ${author} with ${pages} (catalog number: ${catalogNumber}) added to library `)
-    const book = new Book(title, author, pages, read, catalogNumber);
+    book = new Book(title, author, pages, read, catalogNumber);
     myLibrary.push(book);
     createCard(book);
     console.log(`SUCCESS! ${title}by ${author} with ${pages} added to library `)
     console.log(myLibrary);
     i++;
+    }
 }
 
 
@@ -108,6 +138,8 @@ function createCard (book) {
     }
    
     displayRead.addEventListener('click', toggleRead);
+
+
 
        
 };
